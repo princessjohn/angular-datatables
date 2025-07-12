@@ -1,6 +1,6 @@
 {
-  "name": "angular-datatables-workspace",
-  "version": "19.0.0",
+  "name": "angular-datatables-v20",
+  "version": "20.0.0",
   "description": "Angular directive for DataTables",
   "scripts": {
     "start": "npm run link:lib && ng serve",

@@ -145,9 +145,8 @@
           <div class="divider"></div>
         </li>
         <!-- Hide deprecated section completely in DT v2 -->
-        <ng-container *ngIf="dtVersion == 'v1'">
-
-        <li><a class="subheader">Deprecated <span class="new badge red" data-badge-caption="">NOT SUPPORTED</span></a>
+        @if (dtVersion == 'v1') {
+          <li><a class="subheader">Deprecated <span class="new badge red" data-badge-caption="">NOT SUPPORTED</span></a>
         </li>
         <li class="bold">
           <a class="waves-effect waves-blue" routerLink="/basic/angular-way">Angular way</a>
@@ -155,10 +154,10 @@
         <li class="bold">
           <a class="waves-effect waves-blue" routerLink="/basic/server-side-angular-way">Server side the Angular way</a>
         </li>
-      </ng-container>
+      }
     </ul>
-    </li>
-  </ul>
+  </li>
+</ul>
 </header>
 
 <main>
@@ -171,7 +170,7 @@
       <p>
         <span class="white-text text-darken-2"> Designed and built with ❤️ by
           <a class="grey-text text-darken-4" href="https://github.com/l-lin"><u>Louis LIN</u></a>, <a
-            class="grey-text text-darken-4" href="https://github.com/shanmukhateja"><u>Surya Teja K</u></a> and
+          class="grey-text text-darken-4" href="https://github.com/shanmukhateja"><u>Surya Teja K</u></a> and
           contributors.
         </span>
       </p>

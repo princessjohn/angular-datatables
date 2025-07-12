@@ -13,9 +13,11 @@
       <div class="section">
         <div class="col s12 m9 l12 showcase-tabs">
           <section highlight-js-content=".json">
-<pre *ngIf="person">
-<code class="json highlight">{{person|json}}</code>
-</pre>
+            @if (person) {
+              <pre>
+                <code class="json highlight">{{person|json}}</code>
+              </pre>
+            }
           </section>
           <button class="waves-effect btn" (click)="goBack()">Go back</button>
         </div>

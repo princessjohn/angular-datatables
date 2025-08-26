@@ -1,9 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, SecurityContext } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {HttpClient, provideHttpClient, withInterceptorsFromDi} from '@angular/common/http';
 
-import { DataTablesModule } from 'angular-datatables';
+import {MarkdownModule, provideMarkdown} from 'ngx-markdown';
+
+import { DataTablesModule } from 'angular-datatables-v20';
 
 import { AppRoutingModule } from './app.routing';
 
@@ -41,7 +43,7 @@ import { UsingNgPipeComponent } from './advanced/using-ng-pipe.component';
 import { CommonModule, CurrencyPipe, UpperCasePipe } from '@angular/common';
 
 // Markdown
-import { MarkdownModule } from 'ngx-markdown';
+/*import {MarkdownModule, provideMarkdown} from 'ngx-markdown';*/
 import { BaseDemoComponent } from './base-demo/base-demo.component';
 import { FAQComponent } from './f-a-q/f-a-q.component';
 import { UsingNgTemplateRefComponent } from './advanced/using-ng-template-ref.component';
@@ -91,13 +93,17 @@ import { NewServerSideComponent } from './basic/new-server-side/new-server-side.
     ReactiveFormsModule,
     DataTablesModule,
     AppRoutingModule,
-    MarkdownModule.forRoot({
+    MarkdownModule.forChild()
+    // MarkdownModule.forRoot({ loader: HttpClient })  // ✅ required
+    /*MarkdownModule.forRoot({
       sanitize: SecurityContext.NONE
-    })],
+    })*/],
   providers: [
     UpperCasePipe,
     CurrencyPipe,
-    provideHttpClient(withInterceptorsFromDi())
+    provideHttpClient(withInterceptorsFromDi()),
+    // provideHttpClient(),
+    provideMarkdown({ loader: HttpClient }),
   ]
 })
 export class AppModule { }

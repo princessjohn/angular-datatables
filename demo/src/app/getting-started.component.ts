@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { DtVersionService } from './dt-version.service';
 import { Subscription } from 'rxjs';
+import { MarkdownComponent } from 'ngx-markdown';
 
 @Component({
     selector: 'app-getting-started',
     templateUrl: 'getting-started.component.html',
-    standalone: false
+    // standalone: false
+    imports: [ MarkdownComponent],
 })
 export class GettingStartedComponent implements OnInit {
 

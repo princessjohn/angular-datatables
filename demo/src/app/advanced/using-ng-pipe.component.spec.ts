@@ -2,7 +2,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { NO_ERRORS_SCHEMA, SecurityContext } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { DataTableDirective, DataTablesModule } from 'angular-datatables';
+import { DataTableDirective, DataTablesModule } from 'angular-datatables-v20';
 import { MarkdownModule } from 'ngx-markdown';
 import { BaseDemoComponent } from '../base-demo/base-demo.component';
 import { AppRoutingModule } from '../app.routing';
@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { UsingNgPipeComponent } from './using-ng-pipe.component';
 import { UpperCasePipe, CurrencyPipe } from '@angular/common';
 import { By } from '@angular/platform-browser';
-import { Person } from 'app/person';
+import { Person } from '../person';
 
 
 let fixture: ComponentFixture<UsingNgPipeComponent>, component: null| UsingNgPipeComponent = null;

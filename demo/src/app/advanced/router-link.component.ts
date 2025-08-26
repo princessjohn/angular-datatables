@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { IDemoNgComponentEventType } from './demo-ng-template-ref-event-type';
 import { DemoNgComponent } from './demo-ng-template-ref.component';
-import { ADTSettings } from 'angular-datatables/src/models/settings';
+import { ADTSettings } from '../../../../lib/src/models/settings';
 
 @Component({
     selector: 'app-router-link',

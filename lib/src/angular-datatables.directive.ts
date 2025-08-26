@@ -100,7 +100,7 @@ export class DataTableDirective implements OnDestroy, OnInit {
 
               // run user specified row callback if provided.
               if (resolvedDTOptions.rowCallback) {
-                resolvedDTOptions.rowCallback(row, data, index);
+                (resolvedDTOptions as any).rowCallback(row, data, index);
               }
             }
           };

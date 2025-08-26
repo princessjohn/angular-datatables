@@ -9,6 +9,10 @@
     "target": "es5",
     "typeRoots": [
       "../node_modules/@types"
-    ]
+    ],
+    "paths": {
+      "angular-datatables-v20": ["../dist/angular-datatables-v20"]
+    }
+
   }
 }

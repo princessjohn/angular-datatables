@@ -3,12 +3,16 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { Person } from './person';
 import { PersonService } from './person.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-person',
     templateUrl: 'person.component.html',
     providers: [PersonService],
-    standalone: false
+  imports: [
+    CommonModule // <-- Import CommonModule in the feature module
+  ],
+    // standalone: false
 })
 export class PersonComponent implements OnInit {
   person!: Person;

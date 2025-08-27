@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Config } from 'datatables.net';
+import {BaseDemoComponent} from "../base-demo/base-demo.component";
+import {DataTablesModule} from "../../../../lib";
 
 @Component({
     selector: 'app-row-click-event',
     templateUrl: 'row-click-event.component.html',
-    standalone: false
+  imports:[BaseDemoComponent, DataTablesModule]
 })
 export class RowClickEventComponent implements OnInit {
 

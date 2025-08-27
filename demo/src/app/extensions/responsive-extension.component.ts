@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Config } from 'datatables.net-dt';
 import 'datatables.net-responsive';
+import {BaseDemoComponent} from "../base-demo/base-demo.component";
+import {DataTablesModule} from "../../../../lib";
 
 @Component({
     selector: 'app-responsive-extension',
     templateUrl: 'responsive-extension.component.html',
-    standalone: false
+    imports:[BaseDemoComponent, DataTablesModule]
 })
 export class ResponsiveExtensionComponent implements OnInit {
 

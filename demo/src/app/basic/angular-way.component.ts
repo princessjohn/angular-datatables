@@ -3,11 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { Person } from '../person';
 import { Config } from 'datatables.net';
+import {BaseDemoComponent} from "../base-demo/base-demo.component";
+import {DataTablesModule} from "../../../../lib";
 
 @Component({
     selector: 'app-angular-way',
     templateUrl: 'angular-way.component.html',
-    standalone: false
+  imports:[BaseDemoComponent, DataTablesModule]
 })
 export class AngularWayComponent implements OnDestroy, OnInit {
 

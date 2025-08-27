@@ -1,12 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
-import { DataTableDirective } from 'angular-datatables-v20';
 import { Config } from 'datatables.net';
+import {BaseDemoComponent} from "../base-demo/base-demo.component";
+import {DataTablesModule, DataTableDirective} from "../../../../lib";
+import {AsyncPipe} from "@angular/common";
 
 @Component({
     selector: 'app-dt-instance',
     templateUrl: 'dt-instance.component.html',
-    standalone: false
+  imports:[BaseDemoComponent, DataTablesModule, AsyncPipe]
 })
 export class DtInstanceComponent implements OnInit {
 

@@ -1,20 +1,18 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 import { filter, Subscription } from 'rxjs';
 import { DtVersionService } from './dt-version.service';
 
-declare var $: any;
+declare var M: any; // Materialize namespace
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css'],
-    standalone: false
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+  standalone: false
 })
-export class AppComponent implements OnInit, OnDestroy {
-
+export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   routerEventsSub$!: Subscription;
-
   dtVersion: 'v2' | 'v1' = 'v2';
 
   constructor(
@@ -25,35 +23,41 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    $.fn.dataTable.ext.errMode = 'none';
-    $('.button-collapse').sideNav({
-      closeOnClick: true
-    });
-
+    // Re-initialize tabs and collapsibles on route change
     this.routerEventsSub$ = this.router.events
-      .pipe(filter(_ => _ instanceof NavigationEnd))
-      .subscribe(_ => {
-        // Note: setTimeout is needed to let DOM render tabs
+      .pipe(filter(ev => ev instanceof NavigationEnd))
+      .subscribe(() => {
         setTimeout(() => {
-          $('ul.tabs').tabs();
-        }, 600);
+          const tabsElems = document.querySelectorAll('ul.tabs');
+          if (tabsElems.length) M.Tabs.init(tabsElems);
+
+          const collapsibleElems = document.querySelectorAll('.collapsible');
+          if (collapsibleElems.length) M.Collapsible.init(collapsibleElems);
+        }, 100);
       });
-
-      // Init DT version picker
-    $('.dt-version-button').dropdown({
-      inDuration: 300,
-      outDuration: 225,
-      constrainWidth: true, // Does not change width of dropdown to that of the activator
-      hover: false, // Activate on hover
-      gutter: 14,
-      belowOrigin: true,
-      alignment: 'left', // Displays dropdown with edge aligned to the left of button
-      stopPropagation: true // Stops event propagation
-    });
-
   }
 
-  onDTVersionChanged(v: 'v2'|'v1') {
+  ngAfterViewInit(): void {
+    // Initialize sidenav
+    const sidenavElems = document.querySelectorAll('.sidenav');
+    if (sidenavElems.length) M.Sidenav.init(sidenavElems, { edge: 'left', draggable: true });
+
+    // Initialize dropdowns
+    const dropdownElems = document.querySelectorAll('.dt-version-button');
+    if (dropdownElems.length) {
+      M.Dropdown.init(dropdownElems, {
+        inDuration: 300,
+        outDuration: 225,
+        constrainWidth: true,
+        hover: false,
+        gutter: 14,
+        coverTrigger: false,
+        alignment: 'left'
+      });
+    }
+  }
+
+  onDTVersionChanged(v: 'v2' | 'v1') {
     this.dtVersion = v;
     this.dtVersionService.versionChanged$.next(v);
   }

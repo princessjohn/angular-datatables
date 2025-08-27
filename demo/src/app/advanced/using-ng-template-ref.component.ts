@@ -3,11 +3,13 @@ import { Subject } from 'rxjs';
 import { IDemoNgComponentEventType } from './demo-ng-template-ref-event-type';
 import { DemoNgComponent } from './demo-ng-template-ref.component';
 import { ADTSettings } from '../../../../lib/src/models/settings';
+import {BaseDemoComponent} from "../base-demo/base-demo.component";
+import {DataTablesModule} from "../../../../lib";
 
 @Component({
     selector: 'app-using-ng-template-ref',
     templateUrl: './using-ng-template-ref.component.html',
-    standalone: false
+  imports:[BaseDemoComponent, DataTablesModule, DemoNgComponent]
 })
 export class UsingNgTemplateRefComponent implements OnInit, AfterViewInit {
 

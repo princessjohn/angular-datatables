@@ -5,7 +5,7 @@ import { IDemoNgComponentEventType } from './demo-ng-template-ref-event-type';
 @Component({
     selector: 'app-demo-ng-template-ref',
     templateUrl: './demo-ng-template-ref.component.html',
-    standalone: false
+    // standalone: false
 })
 export class DemoNgComponent implements OnInit {
 

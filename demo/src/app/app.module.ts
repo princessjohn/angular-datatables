@@ -5,7 +5,7 @@ import {HttpClient, provideHttpClient, withInterceptorsFromDi} from '@angular/co
 
 import {MarkdownModule, provideMarkdown} from 'ngx-markdown';
 
-import { DataTablesModule } from 'angular-datatables-v20';
+import {DataTablesModule} from "../../../lib";
 
 import { AppRoutingModule } from './app.routing';
 
@@ -52,38 +52,11 @@ import { MoreHelpComponent } from './more-help/more-help.component';
 import { WithAjaxCallbackComponent } from './basic/with-ajax-callback/with-ajax-callback.component';
 import { NewServerSideComponent } from './basic/new-server-side/new-server-side.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomeComponent,
-    GettingStartedComponent,
-    PersonComponent,
-    ZeroConfigComponent,
-    WithOptionsComponent,
-    WithAjaxComponent,
-    AngularWayComponent,
-    ServerSideAngularWayComponent,
-    CustomRangeSearchComponent,
-    DtInstanceComponent,
-    IndividualColumnFilteringComponent,
-    LoadDtOptionsWithPromiseComponent,
-    RerenderComponent,
-    RowClickEventComponent,
-    MultipleTablesComponent,
-    RouterLinkComponent,
-    ButtonsExtensionComponent,
-    ColreorderExtensionComponent,
-    FixedColumnsExtensionComponent,
-    ResponsiveExtensionComponent,
-    SelectExtensionComponent,
-    UsingNgPipeComponent,
-    BaseDemoComponent,
-    FAQComponent,
-    UsingNgTemplateRefComponent,
-    DemoNgComponent,
     MoreHelpComponent,
-    WithAjaxCallbackComponent,
-    NewServerSideComponent
   ],
   bootstrap: [AppComponent],
   imports: [

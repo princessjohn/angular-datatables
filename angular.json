@@ -37,12 +37,11 @@
               "node_modules/prismjs/plugins/toolbar/prism-toolbar.css"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.js",
-              "node_modules/datatables.net-bs5/js/dataTables.bootstrap5.min.js",
-              "node_modules/tether/dist/js/tether.js",
               "node_modules/materialize-css/dist/js/materialize.js",
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/datatables.net/js/dataTables.js",
+              "node_modules/datatables.net-bs5/js/dataTables.bootstrap5.min.js",
               "node_modules/jszip/dist/jszip.js",
-              "node_modules/datatables.net/js/dataTables.min.js",
               "node_modules/datatables.net-buttons/js/dataTables.buttons.min.js",
               "node_modules/datatables.net-buttons/js/buttons.colVis.min.js",
               "node_modules/datatables.net-buttons/js/buttons.html5.min.js",
@@ -50,6 +49,7 @@
               "node_modules/datatables.net-colreorder/js/dataTables.colReorder.min.js",
               "node_modules/datatables.net-responsive/js/dataTables.responsive.min.js",
               "node_modules/datatables.net-select/js/dataTables.select.min.js",
+              "node_modules/tether/dist/js/tether.js",
               "node_modules/marked/marked.min.js",
               "node_modules/prismjs/prism.js",
               "node_modules/prismjs/components/prism-typescript.min.js",
@@ -125,12 +125,11 @@
               "node_modules/datatables.net-fixedcolumns/js/dataTables.fixedColumns.js"
             ],
             "styles": [
-              "node_modules/datatables.net-dt/css/dataTables.dataTables.css",
-              "node_modules/datatables.net-buttons-dt/css/buttons.dataTables.css",
-              "node_modules/datatables.net-colreorder-dt/css/colReorder.dataTables.css",
-              "node_modules/datatables.net-responsive-dt/css/responsive.dataTables.css",
-              "node_modules/datatables.net-select-dt/css/select.dataTables.css",
-              "node_modules/materialize-css/dist/css/materialize.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/datatables.net-bs5/css/dataTables.bootstrap5.min.css",
+              "node_modules/datatables.net-buttons-dt/css/buttons.dataTables.min.css",
+              "node_modules/datatables.net-responsive-dt/css/responsive.dataTables.min.css",
+              "node_modules/datatables.net-select-dt/css/select.dataTables.min.css",
               "demo/src/styles.css"
             ],
             "assets": [

@@ -4,11 +4,13 @@ import { Subject } from 'rxjs';
 import { IDemoNgComponentEventType } from './demo-ng-template-ref-event-type';
 import { DemoNgComponent } from './demo-ng-template-ref.component';
 import { ADTSettings } from '../../../../lib/src/models/settings';
+import {BaseDemoComponent} from "../base-demo/base-demo.component";
+import {DataTablesModule} from "../../../../lib";
 
 @Component({
     selector: 'app-router-link',
     templateUrl: 'router-link.component.html',
-    standalone: false
+  imports:[BaseDemoComponent, DataTablesModule, DemoNgComponent]
 })
 export class RouterLinkComponent implements AfterViewInit, OnInit, OnDestroy {
 

@@ -2,6 +2,7 @@ import { Component, Input, OnDestroy, OnInit, TemplateRef } from '@angular/core'
 import { DtVersionService } from '../dt-version.service';
 import { Subscription } from 'rxjs';
 import { MarkdownComponent } from 'ngx-markdown';
+import {NgTemplateOutlet} from "@angular/common";
 
 // needed to re-init tabs on route change
 declare var $: JQueryStatic;
@@ -10,8 +11,8 @@ declare var $: JQueryStatic;
     selector: 'app-base-demo',
     templateUrl: './base-demo.component.html',
     styleUrls: ['./base-demo.component.css'],
-    // standalone: false
-    imports:[MarkdownComponent]
+    // standalone: false,
+  imports: [MarkdownComponent, NgTemplateOutlet]
 })
 export class BaseDemoComponent implements OnInit, OnDestroy {
 

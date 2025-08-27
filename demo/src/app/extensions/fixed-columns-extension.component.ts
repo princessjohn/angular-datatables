@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import 'datatables.net-fixedcolumns-dt';
+import {BaseDemoComponent} from "../base-demo/base-demo.component";
+import {DataTablesModule} from "../../../../lib";
 
 @Component({
     selector: 'app-fixed-columns-extension',
     templateUrl: 'fixed-columns-extension.component.html',
-    standalone: false
+  imports:[BaseDemoComponent, DataTablesModule]
 })
 export class FixedColumnsExtensionComponent implements OnInit {
 

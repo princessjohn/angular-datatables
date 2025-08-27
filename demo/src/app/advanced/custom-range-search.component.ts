@@ -1,13 +1,15 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 
-import { DataTableDirective } from 'angular-datatables-v20';
+import {DataTableDirective, DataTablesModule} from '../../../../lib';
 import { Config } from 'datatables.net';
+import {BaseDemoComponent} from "../base-demo/base-demo.component";
+import {FormsModule} from "@angular/forms";
 
 // Example from https://datatables.net/examples/plug-ins/range_filtering.html
 @Component({
     selector: 'app-custom-range-search',
     templateUrl: 'custom-range-search.component.html',
-    standalone: false
+  imports: [BaseDemoComponent, DataTablesModule, FormsModule]
 })
 export class CustomRangeSearchComponent implements OnDestroy, OnInit {
 

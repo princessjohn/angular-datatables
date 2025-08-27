@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { Person } from '../person';
 import { Config } from 'datatables.net';
+import {BaseDemoComponent} from "../base-demo/base-demo.component";
+import {DataTablesModule} from "../../../../lib";
 
 @Component({
     selector: 'app-server-side-angular-way',
     templateUrl: 'server-side-angular-way.component.html',
     styleUrls: ['server-side-angular-way.component.css'],
-    standalone: false
+  imports:[BaseDemoComponent, DataTablesModule]
 })
 export class ServerSideAngularWayComponent {
 

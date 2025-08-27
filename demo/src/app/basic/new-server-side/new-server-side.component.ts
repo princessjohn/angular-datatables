@@ -1,11 +1,13 @@
 import { Component } from "@angular/core";
 import { Config } from "datatables.net";
+import {BaseDemoComponent} from "../../base-demo/base-demo.component";
+import {DataTablesModule} from "../../../../../lib";
 
 @Component({
     selector: "app-new-server-side",
     templateUrl: "./new-server-side.component.html",
     styleUrls: ["./new-server-side.component.css"],
-    standalone: false
+  imports:[BaseDemoComponent, DataTablesModule]
 })
 export class NewServerSideComponent {
   pageTitle = "Server-side processing";

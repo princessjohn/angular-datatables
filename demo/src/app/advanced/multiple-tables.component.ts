@@ -1,11 +1,12 @@
 import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
-import { DataTableDirective } from 'angular-datatables-v20';
 import { Config } from 'datatables.net';
+import {BaseDemoComponent} from "../base-demo/base-demo.component";
+import {DataTablesModule, DataTableDirective} from "../../../../lib";
 
 @Component({
     selector: 'app-multiple-tables',
     templateUrl: 'multiple-tables.component.html',
-    standalone: false
+    imports:[BaseDemoComponent, DataTablesModule]
 })
 export class MultipleTablesComponent implements OnInit {
 

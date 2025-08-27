@@ -1,11 +1,13 @@
 import { CurrencyPipe, UpperCasePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ADTSettings } from '../../../../lib/src/models/settings';
+import {BaseDemoComponent} from "../base-demo/base-demo.component";
+import {DataTablesModule} from "../../../../lib";
 
 @Component({
     selector: 'app-using-ng-pipe',
     templateUrl: './using-ng-pipe.component.html',
-    standalone: false
+  imports:[BaseDemoComponent, DataTablesModule]
 })
 export class UsingNgPipeComponent implements OnInit {
 

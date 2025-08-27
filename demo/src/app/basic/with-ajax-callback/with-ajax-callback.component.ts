@@ -2,11 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Config } from 'datatables.net';
 import { DataTablesResponse } from '../../datatables-response.model';
+import {BaseDemoComponent} from "../../base-demo/base-demo.component";
+import {DataTablesModule} from "../../../../../lib";
 
 @Component({
     selector: 'app-with-ajax-callback',
     templateUrl: './with-ajax-callback.component.html',
-    standalone: false
+  imports:[BaseDemoComponent, DataTablesModule]
 })
 export class WithAjaxCallbackComponent implements OnInit {
 

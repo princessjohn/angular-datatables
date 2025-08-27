@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import {BaseDemoComponent} from "../base-demo/base-demo.component";
+import {DataTablesModule} from "../../../../lib";
 
 @Component({
     selector: 'app-zero-config',
     templateUrl: 'zero-config.component.html',
-    standalone: false
+  imports:[BaseDemoComponent, DataTablesModule]
 })
 export class ZeroConfigComponent {
 

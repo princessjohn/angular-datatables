@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Config } from 'datatables.net';
 import 'datatables.net-colreorder';
+import {BaseDemoComponent} from "../base-demo/base-demo.component";
+import {DataTablesModule} from "../../../../lib";
 
 @Component({
     selector: 'app-colreorder-extension',
     templateUrl: 'colreorder-extension.component.html',
-    standalone: false
+  imports:[BaseDemoComponent, DataTablesModule]
 })
 export class ColreorderExtensionComponent implements OnInit {
 
